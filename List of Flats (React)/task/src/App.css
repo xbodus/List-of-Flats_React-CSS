@@ -1,0 +1,112 @@
+:root {
+    --font-family: "Roboto", "Sans Serif";
+    --primary-heading-col: #1c1917;
+    --btn-bg-color: #1d4ed8;
+}
+
+::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-weight: 900;
+    color: var(--primary-heading-col);
+    text-transform: uppercase;
+    margin: 1rem 5rem;
+    animation: fade-in-left 1.5s ease-out;
+}
+
+.form-container {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-20);
+    transition: all 1s ease-in-out;
+}
+
+.open {
+    max-height: 800px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+form {
+    margin: 1rem 5rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 2s ease-out;
+}
+
+form :last-child {
+    margin: 0;
+    align-self: start;
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+button {
+    cursor: pointer;
+    color: white;
+    background: var(--btn-bg-color);
+    font-weight: 600;
+    margin: .5rem 5rem;
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / .3), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transition: all .2s ease-in-out;
+}
+
+.btn-fade-in {
+    opacity: 0;
+    animation: fade-in-left 1.5s ease-out 250ms forwards;
+}
+
+button:hover {
+    box-shadow: inset 0 0 5px rgb(0 0 0 / 0.3);
+}
+
+h2{
+    opacity: 0;
+    margin: 4rem 5rem 1rem;
+    animation: fade-in-left 1.5s ease-out 500ms forwards;
+}
+
+ul {
+    margin: 0 5rem;
+}
+
+li:nth-child(1) {
+    opacity: 0;
+    animation: fade-in-left 1.5s ease-out 750ms forwards;
+}
+
+li:nth-child(2) {
+    opacity: 0;
+    animation: fade-in-left 1.5s ease-out 1000ms forwards;
+}
+
+li:nth-child(3) {
+    opacity: 0;
+    animation: fade-in-left 1.5s ease-out 1250ms forwards;
+}
+
+
+@keyframes fade-in-left {
+    0% {
+        opacity: 0;
+        transform: translate(-400px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
